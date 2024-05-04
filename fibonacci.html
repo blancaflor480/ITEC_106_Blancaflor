@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Fibonacci() {
+            
+            var numterm = parseInt(prompt("Enter the number of terms in the Fibonacci sequence: "));
+        
+            if (isNaN(numterm)) {
+                alert("Error: Invalid inputs");
+                return Fibonacci(); 
+            } else if (numterm <= 0) {
+                alert("Error: Please enter a number greater than 0.");
+                return Fibonacci(); 
+            }
+            else if (numterm >= 100) {
+                alert("Error: Please enter a number less than 100.");
+                return Fibonacci(); 
+            }
+    else{
+            var fabcon = [];
+            var n1 = 0, n2 = 1, nterm;
+    
+            for (let i = 1; i <= numterm; i++) {
+                fabcon.push(n1); 
+                nterm = n1 + n2;
+                n1 = n2;
+                n2 = nterm;
+            }
+    
+            alert("Fibonacci sequence: " + fabcon.join(", "));
+        }
+    }
+    
+        Fibonacci();
+    </script>
+    
+</body>
+</html>
